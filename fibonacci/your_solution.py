@@ -13,7 +13,15 @@ def fib(n) -> int:
     when n is 3 return 2
     ...
 
+
     The fibonacci sequence is defined as follows:
     0,1,1,2,3,5,8,13,21,34 ...
     """
-    pass
+    fib_seq = [0, 1]
+    for x in range(1, n):
+        next_num = fib_seq[0] + fib_seq[1]
+        fib_seq[0] = fib_seq[1]
+        fib_seq[1] = next_num
+    return 0 if n == 0 else fib_seq[1]
+
+    # This could be made clearer and more memory efficient using vars instead of a list
